@@ -3,20 +3,24 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Custom Font in Javascript Canvas</title>
+  <title>My Trans Body is...</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <span style="font-family: 'market_saturdayregular';">&nbsp;</span>
   <span style="font-family: 'caviardreams-regular';">&nbsp;</span>
-  <canvas id=c width=500 height=500></canvas>
+
+  <input type="file" id="preview" onchange="previewFile()"><br>
+  <canvas id=c style="background: url('./upload.png') no-repeat;" onclick="" width=500 height="500" alt="Image preview..."></canvas>
+
   <script src="index.js"></script>
   <form action="">
 <br>
 My Trans Body is...<br>
 <input type="text" id="myText" onkeydown="myFunction()">
 </form>
+
 </body>
 
 </html>
