@@ -3,23 +3,29 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>My Trans Body is...</title>
+  <title>Trans is Beautiful</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <span style="font-family: 'market_saturdayregular';">&nbsp;</span>
-  <span style="font-family: 'caviardreams-regular';">&nbsp;</span>
-
-  <input type="file" id="preview" onchange="previewFile()"><br>
-  <canvas id=c style="background: url('./upload.png') no-repeat;" onclick="" width=500 height="500" alt="Image preview..."></canvas>
-
-  <script src="index.js"></script>
-  <form action="">
+  <h1>Trans is Beautiful</h1>
+  <h3>Upload or take a photo from your device.</h3>
+  <hr>
+  <div class="previewimg">
+  <!-- <span style="font-family: 'caviardreams-regular';">&nbsp;</span> -->
+    <input type="file" id="preview" accept="image/*" capture="camera" onchange="previewFile()"><br>
+    <canvas class="image" id="c" onclick="" width=500 height=500 alt="Image preview..."></canvas>
+    <script src="index.js"></script>
+    <form action="">
+  </div>
 <br>
-My Trans Body is...<br>
-<input type="text" id="myText" onkeydown="myFunction()">
-</form>
+<div class="previewtext">
+  <p>My Trans Body is...</p>
+  <br>
+  <input type="text" id="myText" onkeydown="myFunction()">
+  </form>
+</div>
 
 </body>
 

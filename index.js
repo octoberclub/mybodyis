@@ -45,4 +45,6 @@ function previewFile(){
   if (file) {
     reader.readAsDataURL(file); //reads the data as a URL
   }
+  var previewText = document.getElementsByClassName('previewtext');
+  previewText.hidden=false;
 }
