@@ -1,12 +1,17 @@
-var canvas = document.getElementById("c");
-var ctx = canvas.getContext("2d");
+console.log("loadedxxx23");
+document.addEventListener("DOMContentLoaded", function(event) {
+  document.getElementById('step1').className += 'boldText';
+});
 
 function myFunction() {
-  console.log("loaded21");
+  document.getElementById('step3').className = 'boldText';
   var myTextPlaceholder = new Image();
   myTextPlaceholder.src = "rainbow.png";
+  myTextPlaceholder.setAttribute('crossOrigin', 'anonymous');
   myTextPlaceholder.onload = function() {
     console.log("loaded22");
+    var canvas = document.getElementById("c");
+    var ctx = canvas.getContext("2d");
     ctx.globalAlpha = 0.4;
     ctx.drawImage(
       myTextPlaceholder,
@@ -29,16 +34,20 @@ function myFunction() {
 }
 
 function uploadFile() {
+  document.getElementById('step1').className -= 'boldText';
+  document.getElementById('step2').className += 'boldText';
   var file = document.querySelector("input[type=file]").files[0]; //sames as here
   var reader = new FileReader();
 
   reader.onloadend = function() {
     document.getElementById("upload-image").hidden = true;
-    // canvas.display=true;
 
     var profileImage = new Image();
     profileImage.src = reader.result;
+    profileImage.setAttribute('crossOrigin', 'anonymous');
     profileImage.onload = function() {
+      var canvas = document.getElementById("c");
+      var ctx = canvas.getContext("2d");
       ctx.drawImage(
         profileImage,
         0,
@@ -47,15 +56,18 @@ function uploadFile() {
         profileImage.height,
         0,
         0,
-        ctx.width,
-        ctx.height
+        canvas.width,
+        canvas.height
       );
       ctx.fillStyle = "white";
       ctx.textBaseline = "top";
     };
     var myTransBodyPlaceholder = new Image();
     myTransBodyPlaceholder.src = "rainbow.png";
+    myTransBodyPlaceholder.setAttribute('crossOrigin', 'anonymous');
     myTransBodyPlaceholder.onload = function() {
+      var canvas = document.getElementById("c");
+      var ctx = canvas.getContext("2d");
       ctx.globalAlpha = 0.4;
       ctx.drawImage(
         myTransBodyPlaceholder,
@@ -69,12 +81,18 @@ function uploadFile() {
         120
       );
       ctx.globalAlpha = 1.0;
-      ctx.font = "60px market_saturdayregular";
-      ctx.fillText("#MyTransBody is...", 70, 30);
+      ctx.font = "40px market_saturdayregular";
+      ctx.fillText("#MyTransBody is...", 80, 30);
     };
   };
 
   if (file) {
     reader.readAsDataURL(file); //reads the data as a URL
   }
+}
+
+function download() {
+  var canvas = document.getElementById("c");
+  var img    = canvas.toDataURL("image/png");
+  document.write('<img src="'+img+'"/>');
 }

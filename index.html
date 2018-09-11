@@ -5,9 +5,11 @@
   <meta charset="UTF-8">
   <title>My Trans Body</title>
   <link rel="stylesheet" href="style.css">
+  <script src="index.js"></script>
 </head>
 
 <body>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <div class="banner">
     <img src="banner.png" alt="">
     <div class="caption">
@@ -17,16 +19,7 @@
 
   <main>
     <ol>
-      <li>
-        <p>Type in a word or two for a caption</p>
-        <div class="input-container">
-          <form action="">
-            <label>My Trans Body is...</label>
-            <input type="text" id="myText" placeholder="e.g. perfect!" onkeydown="myFunction()">
-          </form>
-        </div>
-      </li>
-      <li>
+      <li id="step1">
         <p>Upload or take a photo from your device</p>
         <div class="upload-container">
           <input type="file" id="upload" class="upload" accept="image/*" capture="camera" onchange="uploadFile()"><br>
@@ -35,13 +28,21 @@
           </label>
         </div>
       </li>
-      <li>
+      <li id="step2">
+        <p>Type in a word or two for a caption</p>
+        <div class="input-container">
+          <form action="">
+            <label>My Trans Body is...</label>
+            <input type="text" id="myText" placeholder="e.g. perfect!" onkeydown="myFunction()">
+          </form>
+        </div>
+      </li>
+      <li id="step3">
         <p>Download your captioned picture and share!</p>
-        <button>Download</button>
+        <canvas class="preview" id="c" alt="Image preview..." height=500px width=500px></canvas>
+        <input type="button" id="download" value="download" onclick="download()">
       </li>
     </ol>
-    <canvas class="preview" id="c" alt="Image preview..."></canvas>
-    <script src="index.js"></script>
   </main>
   <hr>
   <p>© 2018 @octoberclub | All Rights Reserved</p>

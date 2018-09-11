@@ -12,6 +12,10 @@ body {
   flex-direction: column;
 }
 
+.boldText{
+    font-weight: bold;
+}
+
 .banner {
   position: relative;
 }
@@ -41,7 +45,7 @@ body {
 }
 
 main {
-  display: grid;
+  /* display: grid; */
   grid-template-columns: auto [col] auto [col];
   grid-template-rows: auto [row] auto [row] auto [row] auto [row] ;
   grid-gap: 10px;
@@ -65,7 +69,7 @@ li::before {
 
 .upload-container {
   align-items: center;
-  /* text-align: center; */
+  text-align: center;
   flex 0 1 auto;
 }
 
@@ -87,9 +91,8 @@ label {
 }
 
 .preview {
-  height: 300px;
-  width: 200px;
+  /* align-content:stretch; */
   border-style: solid;
-  flex-direction: column;
-  padding: 10%
+  width: 100%;
+  height: auto;
 }
