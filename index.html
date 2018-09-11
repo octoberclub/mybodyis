@@ -19,29 +19,34 @@
 
   <main>
     <ol>
+
       <li id="step1">
         <p>Upload or take a photo from your device</p>
         <div class="upload-container">
-          <input type="file" id="upload" class="upload" accept="image/*" capture="camera" onchange="uploadFile()"><br>
+          <input type="file" id="upload" class="upload" accept="image/*" onchange="uploadFile()"><br>
           <label for="upload">
             <img id="upload-image" class="upload-image" src="upload.png" />
           </label>
+          <canvas class="preview" id="c" alt="Image preview..." height=500px width=500px></canvas>
         </div>
       </li>
+
       <li id="step2">
-        <p>Type in a word or two for a caption</p>
         <div class="input-container">
+          <p>Type in a word or two for a caption</p>
           <form action="">
             <label>My Trans Body is...</label>
             <input type="text" id="myText" placeholder="e.g. perfect!" onkeydown="myFunction()">
           </form>
         </div>
       </li>
+
       <li id="step3">
-        <p>Download your captioned picture and share!</p>
-        <canvas class="preview" id="c" alt="Image preview..." height=500px width=500px></canvas>
-        <input type="button" id="download" value="download" onclick="download()">
+        <div class="download-container">
+          <a id="download" class="download-button">Download your captioned picture and share!</a>
+        </div>
       </li>
+
     </ol>
   </main>
   <hr>

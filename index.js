@@ -1,15 +1,25 @@
-console.log("loadedxxx23");
 document.addEventListener("DOMContentLoaded", function(event) {
   document.getElementById('step1').className += 'boldText';
+  document.getElementById('step3').hidden = true;
+  document.getElementById('c').hidden = true;
+
+  function downloadCanvas(link, canvasId, filename) {
+    link.href = document.getElementById(canvasId).toDataURL();
+    link.download = filename;
+  }
+
+  document.getElementById('download').addEventListener('click', function() {
+    downloadCanvas(this, 'c', 'mytransbodyis.png');
+  }, false);
+
 });
 
 function myFunction() {
   document.getElementById('step3').className = 'boldText';
   var myTextPlaceholder = new Image();
   myTextPlaceholder.src = "rainbow.png";
-  myTextPlaceholder.setAttribute('crossOrigin', 'anonymous');
+  // myTextPlaceholder.setAttribute('crossOrigin', 'anonymous');
   myTextPlaceholder.onload = function() {
-    console.log("loaded22");
     var canvas = document.getElementById("c");
     var ctx = canvas.getContext("2d");
     ctx.globalAlpha = 0.4;
@@ -36,6 +46,9 @@ function myFunction() {
 function uploadFile() {
   document.getElementById('step1').className -= 'boldText';
   document.getElementById('step2').className += 'boldText';
+  document.getElementById('upload-image').hidden = true;
+  document.getElementById('step3').hidden = false;
+  document.getElementById('c').hidden = false;
   var file = document.querySelector("input[type=file]").files[0]; //sames as here
   var reader = new FileReader();
 
@@ -64,7 +77,7 @@ function uploadFile() {
     };
     var myTransBodyPlaceholder = new Image();
     myTransBodyPlaceholder.src = "rainbow.png";
-    myTransBodyPlaceholder.setAttribute('crossOrigin', 'anonymous');
+    // myTransBodyPlaceholder.setAttribute('crossOrigin', 'anonymous');
     myTransBodyPlaceholder.onload = function() {
       var canvas = document.getElementById("c");
       var ctx = canvas.getContext("2d");
@@ -87,12 +100,6 @@ function uploadFile() {
   };
 
   if (file) {
-    reader.readAsDataURL(file); //reads the data as a URL
+    reader.readAsDataURL(file);
   }
-}
-
-function download() {
-  var canvas = document.getElementById("c");
-  var img    = canvas.toDataURL("image/png");
-  document.write('<img src="'+img+'"/>');
 }
