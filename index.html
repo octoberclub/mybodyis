@@ -3,30 +3,48 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Trans is Beautiful</title>
+  <title>My Trans Body</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <span style="font-family: 'market_saturdayregular';">&nbsp;</span>
-  <h1>Trans is Beautiful</h1>
-  <h3>Upload or take a photo from your device.</h3>
-  <hr>
-  <div class="previewimg">
-  <!-- <span style="font-family: 'caviardreams-regular';">&nbsp;</span> -->
-    <input type="file" id="preview" accept="image/*" capture="camera" onchange="previewFile()"><br>
-    <canvas class="image" id="c" onclick="" width=500 height=500 alt="Image preview..."></canvas>
-    <script src="index.js"></script>
-    <form action="">
+  <div class="banner">
+    <img src="banner.png" alt="">
+    <div class="caption">
+      <h1>My Trans Body is...</h1>
+    </div>
   </div>
-<br>
-<div class="previewtext">
-  <p>My Trans Body is...</p>
-  <br>
-  <input type="text" id="myText" onkeydown="myFunction()">
-  </form>
-</div>
 
+  <main>
+    <ol>
+      <li>
+        <p>Type in a word or two for a caption</p>
+        <div class="input-container">
+          <form action="">
+            <label>My Trans Body is...</label>
+            <input type="text" id="myText" placeholder="e.g. perfect!" onkeydown="myFunction()">
+          </form>
+        </div>
+      </li>
+      <li>
+        <p>Upload or take a photo from your device</p>
+        <div class="upload-container">
+          <input type="file" id="upload" class="upload" accept="image/*" capture="camera" onchange="uploadFile()"><br>
+          <label for="upload">
+            <img id="upload-image" class="upload-image" src="upload.png" />
+          </label>
+        </div>
+      </li>
+      <li>
+        <p>Download your captioned picture and share!</p>
+        <button>Download</button>
+      </li>
+    </ol>
+    <canvas class="preview" id="c" alt="Image preview..."></canvas>
+    <script src="index.js"></script>
+  </main>
+  <hr>
+  <p>© 2018 @octoberclub | All Rights Reserved</p>
 </body>
 
 </html>
