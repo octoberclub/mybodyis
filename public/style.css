@@ -6,10 +6,23 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'caviar_dreamsregular';
+    src: url('caviardreams-webfont.woff2') format('woff2'),
+         url('caviardreams-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-  height: 100%;
-  display: grid;
+  height: 100vh;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  font-family: 'caviar_dreamsregular';
 }
 
 .boldText{
@@ -21,10 +34,8 @@ body {
 }
 
 .banner img {
-  /* Make image responsive */
-  display: block;
   width: 100%;
-  max-height: auto:
+  max-height: 10%
 }
 
 .banner>.caption {
@@ -45,63 +56,45 @@ body {
 }
 
 main {
-  /* display: grid; */
-  grid-template-columns: auto [col] auto [col];
-  grid-template-rows: auto [row] auto [row] auto [row] auto [row] ;
-  grid-gap: 10px;
+  /* border-style: soli; */
+  border-color: red;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
-ol {
-  counter-reset: number;
+
+.preview-container {
+  /* border-style: solid; */
+  border-color: blue;
+  margin: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-li {
-  list-style: none;
-  counter-increment: number;
-  padding: 20px
-}
-
-li::before {
-  content: "Step " counter(number) ".";
-  position: relative;
-  left:-15px
-}
-
-.upload-container {
-  align-items: center;
-  text-align: center;
-  flex 0 1 auto;
-}
-
-.upload {
+.upload-image {
   /* visibility: hidden; */
-}
-
-.input-container {
-  align-content: center;
-  flex 0 1 auto;
+  /* height: 0px; */
 }
 
 label {
-  padding: 20px;
   font-weight: bold;
 }
 
-.previewtext {
-}
-
 .preview {
-  /* align-content:stretch; */
   border-style: solid;
-  width: 100%;
-  height: auto;
+  flex: 1;
 }
 
 #download {
-  float:left;
   cursor:pointer;
   color:inherit;
-  padding:3px;
+  width:100%;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 30px
 }
 
 #download:hover {
@@ -122,4 +115,5 @@ label {
     padding: 8px 12px;
     text-decoration: none;
     margin-top: 20px;
+    height: 30px
 }

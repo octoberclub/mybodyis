@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>My Trans Body</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <div class="banner">
+    <img src="banner.png" alt="">
+    <div class="caption">
+      <h1>My Trans Body is...</h1>
+    </div>
+  </div>
+
+  <main>
+    <div style="font-family: market_saturdayregular">&nbsp;</div>
+    <div style="font-family: caviar_dreamsregular">&nbsp;</div>
+    <input type="file" id="upload" class="upload" accept="image/*" onchange="uploadFile()"><br>
+    <label for="upload">
+      <img id="upload-image" class="upload-image" src="upload.png" />
+    </label>
+    <div id="preview-container" class="preview-container" >
+      <canvas class="preview" id="c" alt="Image preview..."</canvas>
+    </div>
+  </main>
+  <footer>
+    <div class="input-container">
+        <p>Type in a word or two for a caption</p>
+        <form action="">
+          <label>My Trans Body is...</label>
+          <input type="text" id="myText" placeholder="e.g. perfect!" onkeydown="myFunction()">
+        </form>
+    </div>
+    <div class="download-container">
+        <a id="download" class="download-button">Download your captioned picture and share!</a>
+    </div>
+    <hr>
+    <p>© 2018 @octoberclub | All Rights Reserved</p>
+  </footer>
+</body>
+
+</html>
