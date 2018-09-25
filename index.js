@@ -91,6 +91,7 @@ function uploadFile() {
         ctx.font = "40px market_saturdayregular";
         ctx.fillText("#MyTransBody is...", midPoint + 70, 50);
         // greyScale=true;
+        myFunction();
       }
     };
   };

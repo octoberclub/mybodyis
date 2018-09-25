@@ -17,31 +17,12 @@
     </div>
   </div>
 
-  <main>
-    <div style="font-family: market_saturdayregular">&nbsp;</div>
-    <div style="font-family: caviar_dreamsregular">&nbsp;</div>
-    <input type="file" id="upload" class="upload" accept="image/*" onchange="uploadFile()"><br>
-    <label for="upload">
-      <img id="upload-image" class="upload-image" src="upload.png" />
-    </label>
-    <div id="preview-container" class="preview-container" >
-      <canvas class="preview" id="c" alt="Image preview..."</canvas>
-    </div>
-  </main>
-  <footer>
-    <div class="input-container">
-        <p>Type in a word or two for a caption</p>
-        <form action="">
-          <label>My Trans Body is...</label>
-          <input type="text" id="myText" placeholder="e.g. perfect!" onkeydown="myFunction()">
-        </form>
-    </div>
-    <div class="download-container">
-        <a id="download" class="download-button">Download your captioned picture and share!</a>
-    </div>
-    <hr>
-    <p>© 2018 @octoberclub | All Rights Reserved</p>
-  </footer>
+  <iframe id="mybodyis"
+    title="My Trans Body is..."
+    width=100%;
+    height=600px;
+    src="./widget.html">
+  </iframe>
 </body>
 
 </html>
