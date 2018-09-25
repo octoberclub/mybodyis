@@ -21,7 +21,6 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
   font-family: 'caviar_dreamsregular';
 }
 
@@ -35,7 +34,8 @@ body {
 
 .banner img {
   width: 100%;
-  max-height: 10%
+  max-height: 80px;
+  /* max-height: 10% */
 }
 
 .banner>.caption {
@@ -52,7 +52,7 @@ body {
 }
 
 .banner>.caption>h1 {
-  font-size: 7vw
+  font-siz: 7vw
 }
 
 main {
