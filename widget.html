@@ -6,6 +6,7 @@
   <title>My Trans Body</title>
   <link rel="stylesheet" href="style.css">
   <script src="index.js"></script>
+  <script src="http://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 </head>
 
 <body>
@@ -16,16 +17,21 @@
         <p>Type in a word or two for a caption</p>
         <form action="">
           <label>My Trans Body is...</label>
-          <input type="text" id="myText" placeholder="e.g. perfect!" onkeydown="myFunction()">
+          <input type="text" id="myText" placeholder="e.g. perfect!" onkeyup="myFunction()">
         </form>
     </div>
     <input type="file" id="upload" class="upload" accept="image/*" onchange="uploadFile()"><br>
     <label for="upload">
-      <img id="upload-image" class="upload-image" src="upload.png" />
+      <!-- <img id="upload-image" class="upload-image" src="upload.png" /> -->
+      <div id="preview-container" class="preview-container" />
+        <!-- <img src='' class="preview" width=500px height=500px /> -->
+        <div id="preview" class="preview"></div>
+        <img src='rainbow.png' id="placeholder-top" class="placeholder-top" />
+        <img src='rainbow.png' id="placeholder-bottom" class="placeholder-bottom" />
+        <p id="text-top" class="text-top">MY TRANS BODY IS...</p>
+        <p id="text-bottom" id="text-bottom" class="text-bottom">PERFECT!</p>
+      </div>
     </label>
-    <div id="preview-container" class="preview-container" >
-      <canvas class="preview" id="c" alt="Image preview..."</canvas>
-    </div>
   </main>
   <footer>
     <div class="download-container">
