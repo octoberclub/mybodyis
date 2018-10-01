@@ -4,19 +4,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
   document.getElementById('text-bottom').hidden=true;
   document.getElementById('placeholder-bottom').hidden=true;
 
-  function downloadCanvas(link, divId, filename) {
-    html2canvas(document.getElementById(divId), { useCORS: true })
-      .then(function (canvas) {
-        console.log('rendered');
-        link.href = canvas.toDataURL();
+  function downloadCanvas(divId, filename) {
+    domtoimage.toJpeg(document.getElementById(divId), { quality: 0.95 })
+      .then(function (dataUrl) {
+        var link = document.createElement('a');
         link.download = filename;
+        link.href = dataUrl;
+        link.click();
       })
       .catch(function (err) { console.log(err); });
   }
 
   document.getElementById('download').addEventListener('click', function() {
-    downloadCanvas(this, 'preview-container', 'mytransbodyis.png');
-  }, false);
+      downloadCanvas('preview-container', 'mytransbodyis.png');
+    }, false);
 });
 
 function myFunction() {
