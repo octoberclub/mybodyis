@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       .then(function (canvas) {
         console.log('rendered');
         link.href = canvas.toDataURL();
-        // link.download = filename;
+        link.download = filename;
       })
       .catch(function (err) { console.log(err); });
   }
