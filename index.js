@@ -3,54 +3,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
   document.getElementById('placeholder-top').hidden=true;
   document.getElementById('text-bottom').hidden=true;
   document.getElementById('placeholder-bottom').hidden=true;
-  function downloadCanvas(link, divId, filename) {
-    html2canvas(document.getElementById(divId), {
-      useCORS: true
-    })
-      .then(function (canvas) {
-        console.log('rendered');
-        link.href = canvas.toDataURL();
-        // link.download = filename;
-      })
-      .catch(function (err) { console.log(err); });
-  }
 
-  document.getElementById('download').addEventListener('click', function() {
-    downloadCanvas(this, 'preview-container', 'mytransbodyis.png');
   function downloadCanvas(link, divId, filename) {
-    html2canvas(document.getElementById(divId), {
-      useCORS: true
-    })
-      .then(function (canvas) {
-        console.log('rendered');
-        link.href = canvas.toDataURL();
-        // link.download = filename;
-      })
-      .catch(function (err) { console.log(err); });
-  }
-
-  document.getElementById('download').addEventListener('click', function() {
-    downloadCanvas(this, 'preview-container', 'mytransbodyis.png');
-  }, false);
-  function downloadCanvas(link, divId, filename) {
-    html2canvas(document.getElementById(divId), {
-      useCORS: true
-    })
-      .then(function (canvas) {
-        console.log('rendered');
-        link.href = canvas.toDataURL();
-        // link.download = filename;
-      })
-      .catch(function (err) { console.log(err); });
-  }
-
-  document.getElementById('download').addEventListener('click', function() {
-    downloadCanvas(this, 'preview-container', 'mytransbodyis.png');
-  }, false);
-  function downloadCanvas(link, divId, filename) {
-    html2canvas(document.getElementById(divId), {
-      useCORS: true
-    })
+    html2canvas(document.getElementById(divId), { useCORS: true })
       .then(function (canvas) {
         console.log('rendered');
         link.href = canvas.toDataURL();
