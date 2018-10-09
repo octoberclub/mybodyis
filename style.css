@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: 'market_saturdayregular';
     src: url('marketsaturday-webfont.woff2') format('woff2'),
@@ -18,6 +19,9 @@
 body {
   height: 100vh;
   min-height: 100vh;
+}
+.devhide {
+  display: none;
 }
 .boldText{
     font-weight: bold;
@@ -46,6 +50,8 @@ body {
 }
 main {
   text-align: center;
+  width: 100%;
+  max-width: 400px;
 }
 input[type="text"] {
   font-size:22px;
@@ -67,6 +73,11 @@ input[type="text"]:focus {
 }
 footer {
   padding-bottom: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+.upload {
+  margin-bottom: 5px;
 }
 .input-container label {
   font-family: 'Lato', sans-serif;
@@ -80,7 +91,7 @@ footer {
   transform: translateX(-50%);
   height: 100px;
   width: 400px;
-  opacity: 0.4;
+  opacity: 0.5;
 }
 .placeholder-bottom {
   position: absolute;
@@ -89,12 +100,12 @@ footer {
   top: 400px;
   left: 50%;
   transform: translateX(-50%);
-  opacity: 0.4;
+  opacity: 0.5;
 }
 .text-top {
   text-align: top;
   position: absolute;
-  top: 5px;
+  top: -2px;
   text-align: center;
   height: 30px;
   width: 100%;
@@ -115,12 +126,9 @@ footer {
   text-transform: uppercase;
 }
 .preview-container {
-  margin: 10px;
   height: 500px;
   width: 400px;
   position: relative;
-  margin-left: auto;
-  margin-right: auto;
 }
 .preview {
   background-image: url('./upload.png');
@@ -138,6 +146,7 @@ footer {
 }
 .download-container {
   width: 100%;
+  max-width: 400px;
   text-align: center;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -147,7 +156,7 @@ footer {
   font-weight: 700;
   font-size: 32px;
   padding: 14px 36px;
-  background-color: #ec6f13;
+  background-color: #ec13c5;
   border: none;
   border-radius: 12px;
   text-align: center;
@@ -155,16 +164,52 @@ footer {
   transition: all linear 0.1s;
 }
 .download-button:hover {
-  background-color: #f3a123;
+  background-color: #f734d4;
   transition: all linear 0.1s;
 }
 @media (max-width: 420px) {
   .preview-container {
-    margin: 10px;
     height: 375px;
     width: 300px;
     position: relative;
-    margin-left: auto;
-    margin-right: auto;
+  }
+  .text-bottom {
+    position: absolute;
+    top: 278px;
+    text-align: center;
+    height: 30px;
+    width: 100%;
+    font-size: 35px;
+    color: white;
+    font-family: 'caviar_dreamsregular', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .placeholder-bottom {
+    position: absolute;
+    height: 100px;
+    width: 300px;
+    top: 270px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.5;
+  }
+  .placeholder-top {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 85px;
+    width: 310px;
+    opacity: 0.5;
+  }
+  .download-container, footer, main {
+    max-width: 300px;
+  }
+  .download-button {
+    font-size: 26px;
+    padding: 12px 20px;
+    transition: all linear 0.1s;
   }
 }
